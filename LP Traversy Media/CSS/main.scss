@@ -1,0 +1,238 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+section {
+  padding: 7em 0;
+}
+
+.container {
+  width: 85%; //evite aux elements de toucher les cotés
+  max-width: 65em;
+  margin: 0 auto;
+}
+
+.split {
+  display: flex;
+  gap: 2em;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  & > * {
+    flex-basis: 30%;
+    min-width: 15em;
+  }
+}
+
+.spacing > * + * {
+  //concerne QUE les enfants de la classe
+  margin-top: var(
+    --spacer,
+    2rem
+  ); //espace les enfants entre eux mais pas le h1 car il n a pas d'enfant avant lui
+} // uniformise l espacement
+
+.btn {
+  display: inline-block; //setting classique
+  text-decoration: none;
+  color: var(--clr-text, #fff);
+  font-weight: 700;
+  font-size: 1.125rem;
+  padding: 0.5em 1.25em;
+  text-transform: uppercase;
+  background: var(--clr-accent, blue);
+  border-radius: 0.25em;
+  transition: transform 250ms ease-in-out;
+  opacity: 250ms linear;
+}
+
+.btn:hover,
+.btn:focus {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
+.primary-title {
+  font-size: 4rem; //defaut
+  font-size: clamp(3rem, calc(5vw + 1rem), 4.5rem);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.section-title {
+  text-align: center;
+  font-size: clamp(2.5rem, calc(5vw + 1rem), 4rem);
+  line-height: 1;
+  color: #17353d;
+  margin-bottom: 5rem;
+}
+
+.hero {
+  color: white;
+  text-align: center;
+  padding: 15em 0;
+  background: #222; //background-color: #222; //backup si radial-gradient pas pris en charge
+
+  @supports (background-blend-mode: multiply) {
+    background-image: url(/img/white-black-heel.png),
+      radial-gradient(#444, #111);
+    //background-blend-mode: multiply;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  & h1 {
+    color: #ffffff;
+
+    text-shadow: 0 1px 0 #ff0303, 0 5px 0 #ff0000, 0 3px 0 rgb(253, 0, 0),
+      0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1),
+      0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3),
+      0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25),
+      0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.featured {
+  background: #eee;
+
+  & p {
+    font-size: 2em;
+    font-weight: 700;
+  }
+
+  &__item {
+    display: block;
+    position: relative;
+    transform: scale(0.85);
+    transition: transform 250ms ease-in-out;
+    text-decoration: none;
+    text-align: center;
+    color: #333;
+
+    &:hover,
+    &:focus {
+      transform: scale(1);
+
+      .featured__details {
+        opacity: 1;
+      }
+    }
+
+    &::after {
+      content: ""; // lui donner obligatoirement du contenu pour le faire exister
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 100% 100% 0 0; //pour avoir un cercle bien dimensionné.
+      border-radius: 50%;
+      box-shadow: 3px 3px rgb(82, 82, 82), -1em 0 0.4em rgb(82, 82, 82);
+      background: radial-gradient(rgb(223, 230, 229), rgb(26, 10, 53));
+      z-index: -1;
+    }
+  }
+
+  &__details {
+    opacity: 0;
+    transition: opacity 250ms linear;
+    span {
+      display: block;
+      font-weight: 900;
+      font-size: 2.5rem;
+      line-height: 1.2;
+      color: rgb(182, 26, 26);
+    }
+  }
+}
+
+.product {
+  background: radial-gradient(
+    var(--clr-inner, rgb(9, 206, 180)),
+    var(--clr-outer, rgb(35, 12, 71))
+  );
+  padding: 3em;
+  border-radius: 3em;
+  margin-bottom: 3em;
+  text-align: center;
+
+  &__title {
+    font-size: 4rem;
+    color: #fff;
+    text-shadow: 0 0 0.2em rgba(black, 0.2);
+    line-height: 1.1;
+  }
+
+  &__image {
+    margin: -5em 0 0 0;
+  }
+
+  @media (min-width: 45em) {
+    //700px /16
+    text-align: left;
+    margin-bottom: 9em;
+
+    &__title {
+      margin: 0;
+    }
+
+    &__image {
+      float: right;
+      width: 65%;
+      shape-outside: url(/img/vans-red.png);
+      shape-margin: 1em;
+      margin: 0 -5em 0 0;
+    }
+
+    &.shoe-left {
+      .product__image {
+        float: left;
+        margin: 0 0 0 -5em;
+        shape-outside: url(/img/puma-white.png);
+        shape-margin: 2em;
+      }
+    }
+  }
+}
+
+.hero {
+  --clr-accent: #faa700;
+}
+
+.shoe-red {
+  --clr-inner: #faa700;
+  --clr-outer: #e48d00;
+  --clr-accent: #a1173c;
+}
+
+.shoe-white {
+  --clr-inner: #fce4b3;
+  --clr-outer: #eac886;
+  --clr-accent: #2f4858;
+}
+
+.shoe-blue {
+  --clr-inner: #6dd5ed;
+  --clr-outer: #2193b0;
+  --clr-accent: #008951;
+}
