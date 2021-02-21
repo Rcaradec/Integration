@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background-color: #038a8a;
+}
+
+#top-img {
+  position: fixed;
+  z-index: -1;
+  margin-left: -15vw;
+  margin-top: -10vw;
+  width: 60vw;
+  height: 80vh;
+}
+
+#bottom-img {
+  position: fixed;
+  z-index: -1;
+  margin-left: 52vw;
+  margin-top: 25vw;
+  width: 60vw;
+  height: 70vh;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.big-card {
+  height: 50vh;
+  width: 20vw;
+  background-color: #eeeeee;
+  margin-top: 20vh;
+  border-radius: 30px;
+  box-shadow: 0px 5px 38px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 5px 38px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 5px 38px 0px rgba(0, 0, 0, 0.75);
+}
+
+#bg-card-img {
+  width: 100%;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+#profile-picture {
+  border-radius: 50%;
+  border: 5px solid white;
+  position: relative;
+  z-index: 1;
+  margin-left: 35%;
+  margin-top: -5vh;
+}
+/*# sourceMappingURL=styles.css.map */
