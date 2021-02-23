@@ -4,10 +4,15 @@
   box-sizing: border-box;
 }
 
+:root {
+  --main-bg-color: rgb(0, 155, 175);
+  --main-gray: rgb(153, 153, 153);
+}
+
 body {
   height: 100vh;
   width: 100%;
-  background-color: rgb(3, 138, 138);
+  background-color: var(--main-bg-color);
 }
 
 #top-img {
@@ -36,7 +41,7 @@ body {
 .big-card {
   height: 50vh;
   width: 20vw;
-  background-color: rgb(238, 238, 238);
+  background-color: rgb(255, 255, 255);
   margin-top: 20vh;
   border-radius: 30px;
   box-shadow: 0px 5px 38px 0px rgba(0, 0, 0, 0.75);
@@ -50,11 +55,45 @@ body {
   border-top-right-radius: 30px;
 }
 
+.picture {
+  display: flex;
+  justify-content: center;
+  margin-top: -40px;
+}
 #profile-picture {
   border-radius: 50%;
   border: 5px solid white;
   position: relative;
   z-index: 1;
-  margin-left: 35%;
-  margin-top: -5vh;
+}
+
+.name,
+.location {
+  text-align: center;
+}
+
+.age,
+.location,
+p {
+  color: var(--main-gray);
+}
+
+.followers p {
+  margin-left: -15px;
+}
+
+.likes p {
+  margin-left: 3px;
+}
+
+.photos p {
+  margin-left: -3px;
+}
+
+.social-media {
+  display: flex;
+  justify-content: space-around;
+  padding: 30px;
+  margin-top: -25px;
+  border-top: 1px solid rgb(180, 180, 180);
 }
