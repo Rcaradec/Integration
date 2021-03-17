@@ -1,0 +1,279 @@
+
+:root{
+    /* COLORS */
+    --VeryDarkGrayishBlue: hsl(217, 19%, 35%);
+    --DesaturatedDarkBlue: hsl(214, 17%, 51%);
+    --GrayishBlue: hsl(212, 23%, 69%);
+    --LightGrayishBlue: hsl(210, 46%, 95%);
+
+    font-family: 'Manrope', sans-serif;
+    
+
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 1440px;
+    background-color: rgb(194, 194, 194);
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+    
+
+
+
+.main_wrapper{
+    height: 350px;
+    width: 1000px;
+    background: rgb(214, 214, 214);
+    border-radius: 30px;
+    background-image: url(/images/drawers.jpg);
+    background-repeat: no-repeat;
+    background-size: 40% 100%;
+    margin-left: auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    
+    
+}
+
+
+    
+    
+    
+
+
+.card_wrapper{
+    grid-area: 3 / 3 / 5 / 5;
+    
+}
+
+.card_wrapper h2, #catchP, .author{
+    margin-left: 40px;
+}
+
+h2{
+    width: 500px;
+    margin-top: -85px;
+    color: rgb(12, 11, 11);
+}
+
+#catchP{
+    color: var(--VeryDarkGrayishBlue);
+}
+
+.author{
+    display: flex;
+    width: 450px;
+    
+    
+    
+}
+    
+
+#michelle_picture{
+    border-radius: 50%;
+    margin-top: 20px;
+    height:50px;
+    width:50px
+
+
+}
+
+h3{
+    margin-left: 20px;
+    margin-top: 25px;
+}
+
+#date{
+    margin-left: 20px;
+    margin-top: -15px;
+    color: var(--GrayishBlue) ;
+    
+}
+
+.author img{
+    height: 20px;
+    width: 20px;
+    
+}
+
+.icon{
+    display: grid;
+    float: right;
+    margin-top: -60px;
+    
+    
+    border-radius: 50%;
+    
+   
+}
+
+#container{
+
+   
+    background-color: rgb(92, 92, 92);
+    border-radius: 10px;
+    height: 50px;
+    width: 200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 2fr 1fr);
+    margin-top: -80px ;
+    align-content: center;
+    display: none;
+    position: relative;
+    z-index: 5;
+ 
+
+    -moz-box-shadow: 0px 0px 10px 5px #329a9d;
+    -webkit-box-shadow: 0px 0px 10px 5px #329a9d;
+    -o-box-shadow: 0px 0px 10px 5px #329a9d;
+    box-shadow: 0px 0px 10px 5px #329a9d;
+    filter:progid:DXImageTransform.Microsoft.Shadow(color=#329a9d, Direction=NaN, Strength=10);
+   
+    
+    
+
+}
+
+#social{
+    grid-column: -2;
+    font-size: 15px;
+    font-family: 'Nunito', sans-serif;
+    background: -webkit-linear-gradient(rgb(0, 255, 128), rgb(228, 93, 3));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    }
+    
+
+.svgs{
+    grid-column: -1;
+    margin-top: -20px;
+    display: grid;
+    padding: 5px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 5px;
+    margin-left: 20px;
+    
+}
+
+
+#twitter_icon{
+    margin-top: 2px;
+}
+    
+
+@media screen and (max-width: 375px) {
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        width: 375px;
+        background-color: rgb(194, 194, 194);
+        display: grid;
+        justify-content: center;
+        align-content: center;
+      
+    }
+
+    .main_wrapper{
+        max-width: 375px;
+        height: 350px;
+        width: 320px;
+        background: rgb(214, 214, 214);
+        border-radius: 30px;
+        background-image: url(/images/drawers.jpg);
+        background-repeat: no-repeat;
+        background-size: 320px 150px;
+        
+        margin-left: 5px;
+    }
+        
+    .card_wrapper{
+        
+        margin-top: 100px;
+        font-size: 10px;
+        margin-left: -160px;
+        text-align: center;
+        width: 300px;
+    }
+
+        
+        
+
+
+    h2 {
+        max-width: 300px;
+    }
+
+    #catchP{
+        margin-left: 70px;
+        font-size: 8px;
+        text-align: left;
+    }
+   
+    #michelle_picture{
+        height: 40px;
+        width: 40px;
+        margin-left: 25px;
+        
+    }
+
+    .prez{
+        display: grid;
+        grid-gap: 5px
+    }
+
+    #date{
+        text-align: left;
+    }
+
+    #share_icon{
+        margin-top: 10px;
+        margin-right: -20px;
+    }
+    
+    .container{
+        background-color: rgb(92, 92, 92);
+        border-radius: 10px;
+        height: 100px;
+        width: 300px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 2fr 1fr);
+        margin-top: -80px ;
+        align-content: center;
+        display: none;
+    }
+
+ 
+    
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+.attribution{
+   position: absolute;
+   bottom: 0;
+   font-size: 10px;
+}
