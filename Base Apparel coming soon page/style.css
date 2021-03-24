@@ -1,0 +1,177 @@
+@import url("https://fonts.google.com/specimen/Josefin+Sans");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  margin: 0;
+  background-image: url(/images/bg-pattern-desktop.svg);
+
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.inner_container {
+  max-width: 500px;
+  margin: auto;
+}
+
+.left {
+  width: 60%;
+  padding: 0 7em 7em;
+}
+
+#heading_span {
+  color: hsl(0, 36%, 70%);
+  font-weight: 300;
+}
+
+h1 {
+  margin-top: 70px;
+  letter-spacing: 0.5em;
+  font-weight: 400;
+  font-size: 48px;
+  color: hsl(0, 6%, 24%);
+}
+
+p {
+  width: 80%;
+  color: hsl(0, 36%, 70%);
+  line-height: 1.5em;
+}
+
+.right {
+  width: 40%;
+}
+
+.bg_image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.logo {
+  padding: 4em 0;
+  width: 200px;
+}
+
+.bg-mobile {
+  display: none;
+}
+
+form {
+  position: relative;
+  margin-top: 50px;
+}
+
+form.error {
+  display: block;
+}
+
+input {
+  padding: 15px 50px;
+  width: 250px;
+  border-radius: 50px;
+  background-color: transparent;
+  border: 2px solid hsl(0, 36%, 70%);
+  width: 100%;
+  font-size: 16px;
+  height: 55px;
+  box-shadow: 3px 7px 9px hsl(0, 80%, 86%);
+  transition: 0.5s ease;
+}
+
+input:focus {
+  outline: none;
+  border-width: 3px;
+  box-shadow: 3px 7px 9px hsl(0, 48%, 67%);
+}
+
+form.error input {
+  border: 2px solid hsl(0, 93%, 68%);
+}
+
+form.success input {
+  border: 2px solid hsl(110, 72%, 26%);
+}
+
+button {
+  background-image: linear-gradient(hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  border-radius: 50px;
+  padding: 15px;
+  border: none;
+  width: 100px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 55px;
+  box-shadow: 3px 7px 9px hsl(0, 80%, 86%);
+  transition: opacity 1s ease;
+}
+
+button:hover {
+  background: hsl(0, 80%, 86%);
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.error_icon {
+  display: none;
+  position: absolute;
+  top: 15;
+  left: 350px;
+  top: 0;
+  padding: 15px;
+}
+
+form.error .error_icon {
+  display: block;
+}
+
+small {
+  display: none; /* needed in order to make to margin-top */
+  color: hsl(0, 93%, 68%);
+  margin-top: 1.2em;
+  margin-left: 3.7em;
+}
+
+form.error small {
+  display: block;
+}
+
+@media screen and (max-width: 600px) {
+  .logo {
+    padding: 0.5em;
+    width: 180px;
+  }
+
+  .left {
+    width: 100%;
+    padding: 1em;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  .right {
+    display: none;
+  }
+
+  .bg-mobile {
+    display: block;
+    margin-top: 25px;
+    /*width: 100%; if we want the image not streched full width
+    border-radius: 20px;*/
+    margin-left: -40px;
+    margin-right: -40px;
+    width: calc(100% + 80px);
+    box-shadow: 2px 8px 70px hsl(0, 59%, 69%);
+  }
+}
